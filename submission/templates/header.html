@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Hex BOT </title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/bootstrap.min.css')}}">
+  <script src = "{{url_for('static',filename = 'js/jquery.js')}}" type="text/javascript" ></script>
+  <script src = "{{url_for('static',filename = 'js/bootstrap.min.js')}}" type="text/javascript" ></script>
+  <script src = "{{url_for('static',filename = 'js/bootstrap.js')}}" type="text/javascript" ></script>
+  <style>
+</style>
+  </head>
+
+
+
+  <body>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container">
+      <br><br><br>
+      <div class="alert alert-info alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>{{message|safe}}</strong>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+      {% block body %}
+
+
+      {% endblock %}
+    </div>
+  </body>
+
+
+  </html>
