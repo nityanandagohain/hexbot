@@ -2,9 +2,6 @@
 
 {% block body %}
 
-
-
-
 <div class="card" style='border: None; padding-top: 5%;'>
   <div class="panel-heading" align="center">
     <h2>Hex BOT</h2>
@@ -16,7 +13,9 @@
       <form method=post enctype=multipart/form-data> <input type=file name=file>
         <input type=submit value=Upload>
       </form>
-      <img src="data:image/png;base64,{{ picture }}" height="300" width="300"/>
+      {% if picture is defined %}
+        <img src="data:image/png;base64,{{ picture }}" height="300" width="300" />
+      {% endif %}
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ import math
 import progressbar
 from pointillism import *
 
-def pointillism(img_path):
+def pointillism(img_path, colors):
     img = cv2.imread(img_path)
     print("image path", img_path)
     
@@ -21,10 +21,10 @@ def pointillism(img_path):
 
     palette_size = 20
     print("Computing color palette...")
-    palette = ColorPalette.from_image(img, palette_size)
+    palette = ColorPalette(colors)
 
     print("Extending color palette...")
-    palette = palette.extend([(0, 50, 0), (15, 30, 0), (-15, 30, 0)])
+#     palette = palette.extend([(0, 50, 0), (15, 30, 0), (-15, 30, 0)])
 
     # display the color palette
     # cv2.imshow("palette", palette.to_image())
